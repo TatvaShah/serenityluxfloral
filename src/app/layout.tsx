@@ -21,6 +21,15 @@ const fontClass = {
 const siteUrl = "https://serenityluxfloral.vercel.app";
 const shareTitle = `${brand.name} | ${brand.location}`;
 
+const ogImage = {
+  url: "https://serenityluxfloral.vercel.app/og.jpg",
+  secureUrl: "https://serenityluxfloral.vercel.app/og.jpg",
+  type: "image/jpeg",
+  width: 1200,
+  height: 630,
+  alt: "Serenity Lux Floral",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -29,6 +38,7 @@ export const metadata: Metadata = {
   },
   description: brand.subhead,
   openGraph: {
+    images: [ogImage],
     title: shareTitle,
     description: brand.subhead,
     url: siteUrl,
@@ -37,6 +47,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
+    images: [{ url: ogImage.url, alt: ogImage.alt }],
     card: "summary_large_image",
     title: shareTitle,
     description: brand.subhead,
